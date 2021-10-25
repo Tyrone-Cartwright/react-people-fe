@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* this is a comment in reg css */
+
+// This comment syntax works in SASS/SCSS Files
+
+// Layout Theme Variables
+
+// colors
+$maincolor: black;
+$contrastcolor: white;
+
+// fonts
+$mainfont: 'Helvetica';
+
+// Layout Theme Mixins
+@mixin white-text-black-bg {
+  color: $contrastcolor;
+  background-color: $maincolor;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@mixin black-text-white-bg {
+  color: $maincolor;
+  background-color: $contrastcolor;
+}
+
+// Header styles
+.Header {
+  @include white-text-black-bg;
+  font-family: $mainfont;
+  display: flex;
+  justify-content: flex-start;
+  // also in SASS, you can nest your styles or your style rules
+  a {
+    @include black-text-white-bg;
+    // &:hover {
+    //   color: blue;
+    // }
+    h1 {
+      margin: 10px;
+      font-size: large;
+    }
+  }
+}
+
+.Form {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  min-height: 10rem;
+  max-width: 7rem;
+  margin: 5rem auto;
+  // input[type="submit"] {
+  //   justify-self: flex-start;
+  // }
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import Index from '../pages/Index';
 import Show from '../pages/Show';
 
@@ -76,6 +76,12 @@ const Main = (props) => {
             )
           }
         />
+        <Route to='/404'>
+          <div>
+            <h1>Page not found</h1>
+            <Link to='/'>Go Back to Home Page</Link>
+          </div>
+        </Route>
       </Switch>
     </main>
   );
